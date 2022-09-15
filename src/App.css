@@ -1,7 +1,7 @@
 body{
     margin: 0%;
     box-sizing: border-box;
-    background-color: #EFEFEF;
+    background: linear-gradient(rgb(60%, 100%, 60%), rgba(40%, 20%, 60%, 50%));
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 button{
@@ -26,10 +26,11 @@ h1,h2{
 
 /**************style del componente App****************/
 .App{
-   background-color: rgb(151, 122, 122);
+    background: linear-gradient(90deg, rgb(20%, 40%, 60%), rgb(60%, 20%, 40%));
    margin: 20px;
    border-radius: 10px;
    padding: 10px; 
+   box-shadow: 5px 5px 10px black;
 }
 .card{
     display: flex;
