@@ -1,7 +1,7 @@
 body{
     margin: 0%;
     box-sizing: border-box;
-    background: linear-gradient(rgb(100, 163, 100), rgba(112, 231, 118, 0.5));
+    /* //background: linear-gradient(rgb(100, 163, 100), rgba(112, 231, 118, 0.5)); */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 button{
@@ -27,8 +27,7 @@ h1,h2{
 /**************style del componente App****************/
 .App{
     background: linear-gradient(90deg, rgb(20%, 40%, 60%), rgb(60%, 20%, 40%));
-   margin: 20px;
-   border-radius: 10px;
+    height: 100vh;
    padding: 10px; 
    box-shadow: 5px 5px 10px black;
 }
@@ -96,6 +95,14 @@ ul {
     border-radius: 5px;
     box-shadow: 5px 5px 2px rgb(134, 129, 216);
     padding: 10px;
+    position: relative;
+    gap: 08px;
+}
+.card__form i{
+  margin-left: 05px;
+  position: absolute;
+  margin-top: 10px;
+  
 }
 .card__form:hover{
     background: linear-gradient(rgb(134, 129, 216), rgb(219, 138, 208));   
@@ -111,8 +118,9 @@ ul {
     flex-direction: row;
     outline: none;
     border: none;
-    
+    padding-left: 23px; 
 }
+
 .button__form{
     background-color: rgb(40, 40, 163);
     width: 100%;
