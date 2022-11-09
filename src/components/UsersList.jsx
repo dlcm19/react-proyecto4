@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-const UsersList = ({user,allUsers,setUpdateData}) => {
+const UsersList = ({user,allUsers,setUpdateData,handleOpenForm,handleMesajeDelete,handleCloseForm}) => {
     // console.log(user);
 
  const deteleUsers = () => {
@@ -9,6 +9,8 @@ const UsersList = ({user,allUsers,setUpdateData}) => {
       axios.delete(URL)
       .then(res => {
         // console.log(res.data);
+        handleCloseForm()
+        handleMesajeDelete()
         allUsers()
       })
       .catch(err => console.log(err))
@@ -16,11 +18,15 @@ const UsersList = ({user,allUsers,setUpdateData}) => {
  
 const bottonUpdate = () =>{
     setUpdateData(user)
+    handleOpenForm() 
 }
+
+
 
 
   return (
     <article className='card__UserList' >
+        
         <ul>
            <li>  <span>Laste name:</span> {user["last_name"]}</li>
            <li>  <span>First name:</span> {user["first_name"]}</li>

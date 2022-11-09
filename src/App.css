@@ -3,6 +3,7 @@ body{
     box-sizing: border-box;
     /* //background: linear-gradient(rgb(100, 163, 100), rgba(112, 231, 118, 0.5)); */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(90deg, rgb(20%, 40%, 60%), rgb(60%, 20%, 40%));
 }
 button{
   cursor: pointer;
@@ -26,10 +27,7 @@ h1,h2{
 
 /**************style del componente App****************/
 .App{
-    background: linear-gradient(90deg, rgb(20%, 40%, 60%), rgb(60%, 20%, 40%));
-    height: 100vh;
-   padding: 10px; 
-   box-shadow: 5px 5px 10px black;
+  padding: 20px;
 }
 .card{
     display: flex;
@@ -45,18 +43,16 @@ h1,h2{
 /**************style del componente UsersList****************/
 .card__UserList{
     border-radius: 10px;
-    background: linear-gradient(rgb(217, 231, 220), rgb(71, 106, 151));
     padding: 20px;
     border-top:50px;
     width: 200px;
     transition: transform 200ms ease;
-    /* box-shadow: 5px 5px 2px 2px #EFEFEF; */
     border: 1px solid rgb(0%, 60%, 70%);
 }
 .card__UserList:hover{
     transform:scale(1.05);
     transition: transform 200ms ease;
-    background: linear-gradient(rgb(31, 172, 62), rgb(219, 138, 208));
+    background-color: rgba(180, 175, 175, 0.11);
 }
 ul {
     padding-left: 0;
@@ -83,20 +79,39 @@ ul {
     background-color: orange;
  }
 /**************end style del componente UsersList****************/
-/**************style del componente UsersForm****************/
+/**************style del componente UsersForm y modal****************/
+.form-none{
+    display: none;
+}
+.form-container{
+    position: fixed;
+    z-index: 1;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   /* backdrop-filter: blur(0.5px); */
+   background-color: rgba(79, 84, 85, 0.541);
+   
+   
+}
 .card__form{
+    
+    background-color: rgba(165, 170, 169, 0.418);
     width: 250px;
-    background: linear-gradient(rgb(183, 211, 189), rgb(184, 160, 116));
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     margin-top: 20px;
     margin-left: 20px;
     border-radius: 5px;
-    box-shadow: 5px 5px 2px rgb(134, 129, 216);
     padding: 10px;
     position: relative;
     gap: 08px;
+   
 }
 .card__form i{
   margin-left: 05px;
@@ -105,7 +120,28 @@ ul {
   
 }
 .card__form:hover{
-    background: linear-gradient(rgb(134, 129, 216), rgb(219, 138, 208));   
+    background-color: rgba(242, 244, 247, 0.575);
+}
+
+.form-x{
+    position: absolute;
+    padding: 4px;
+    right: 10px;
+    top: 10px;
+}
+.form-x:hover{
+    background-color: #fff;
+    padding: 4px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-property: opacity, left;
+    transition-duration: 3s;
 }
 .card__titleForm{
     text-align: center;
@@ -130,3 +166,25 @@ ul {
     width: max-content;
   }
 /************** end style del componente UsersForm****************/
+
+/************style button open form*********/
+.button-openForm{
+    color: #000;
+}
+/************ end style button open form*********/
+
+/************style container modal mesaje para borrar*********/
+.container-delete{
+  background-color: rgba(255, 255, 255, 0.281);
+  z-index: 1;
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+  
+
+}
+.ocultar-container-detele{
+    display: none;
+}

@@ -12,7 +12,7 @@ const empty = {
 
 }
 
-const UsersForm = ({allUsers,updateData,setUpdateData}) => {
+const UsersForm = ({allUsers,updateData,setUpdateData ,handleCloseForm}) => {
 useEffect(() => {
     if (updateData) {
      reset(updateData)
@@ -44,10 +44,13 @@ const buttonForm = data => {
     createMovie(data)     
         }
         reset(empty)
+
+         handleCloseForm() // dicha función al crear el usuario el modal se oculta de una vez.  
  }
     const { register, reset, handleSubmit } = useForm()
     return (
         <form  className='card__form' onSubmit={handleSubmit(buttonForm)} >
+             <div  onClick={handleCloseForm} className='form-x'>X</div>
             <h2 className='card__titleForm'>{updateData ? 'Update users information': 'Create new user'}</h2>
             <label className='label__form' htmlFor="name">
               <div>
