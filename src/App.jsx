@@ -3,6 +3,9 @@ import './App.css'
 import UsersList from './components/UsersList'
 import axios from 'axios'
 import UsersForm from './components/UsersForm'
+import Swal from "sweetalert2";
+import 'animate.css';
+
 
 function App() {
 const [useAll, setUseAll] = useState()
@@ -11,6 +14,23 @@ const [isFormOpen, setIsFormOpen] = useState(false)
 
 
 const [mesajeDelete, setMesajeDelete] = useState(false)
+
+const alertMessage = () => {
+  Swal.fire({
+    title: 'Welcome',
+    text: 'A mi App de Usuario: Crea, Borra y Actualiza',
+    showClass: {
+      popup: 'animate__animated animate__fadeInDown'
+    },
+    hideClass: {
+      popup: 'animate__animated animate__fadeOutUp'
+    }
+  })
+}
+
+useEffect(() =>{
+  alertMessage()
+},[])
 
 const allUsers = () => {
   const URL = 'https://users-crud1.herokuapp.com/users/'
@@ -42,11 +62,6 @@ const allUsers = () => {
       />
       </div>
          <div className='card' >
-          
-         {/* <div className={mesajeDelete ? 'container-delete' : 'ocultar-container-detele'}>
-            <div onClick={handleCloseForm} className='form-x'>X</div>
-            <h4>Desea eliminar al siguiente usuario:</h4>
-          </div> */}
         {
           
           useAll?.map(user => (
@@ -59,9 +74,11 @@ const allUsers = () => {
               handleMesajeDelete= {handleMesajeDelete}
               handleCloseForm={handleCloseForm}
             />
+              
           ))
         }
-       </div>     
+       </div>   
+      
        
     </article>
   )
