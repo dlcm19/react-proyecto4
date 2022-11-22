@@ -33,18 +33,11 @@ const UsersList = ({user,allUsers,setUpdateData,handleOpenForm}) => {
       allUsers()
     }
   })
-  
-
-
-
-
-     
-      // .then(res => {
-      //   // console.log(res.data);
-      //   alertDelete()
-        
        
-      // })
+      //  .then(res => {
+      // // console.log(res.data);
+      // allUsers()
+      //  })
       .catch(err => console.log(err))
 }
  

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
 import { useForm } from 'react-hook-form'
+import Swal from "sweetalert2";
 
 
 const empty = {
@@ -23,10 +24,15 @@ const createMovie = data => {
  const URL = 'https://users-crud1.herokuapp.com/users/'
  axios.post(URL, data)
   .then(res => {
-//    console.log(res.data);
+//  console.log(res.data);
    allUsers()
  })
-   .catch(err => console.log(err))
+   .catch(err => console.log(err),
+    Swal.fire(
+    '500 (Internal Server Error)',
+    'Contactar al Administrador',
+    'error'
+  ))
 }
 
 
